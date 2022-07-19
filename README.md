@@ -64,6 +64,8 @@ app_image = "999999999999999.dkr.ecr.ap-southeast-2.amazonaws.com/your-nginx:lat
 ```
   
 With the Fargate CPU and Memory, make sure you stick to the correct sizes.  See the AWS docs - [CPU Task Guide](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-cpu-memory-error.html)  
+
+Fargate will provision Amazon Linux2 instances unless you specify otherwise, so make sure to also use amd64/nginx in your sript - [amd6/nginx Docker Image] (https://hub.docker.com/r/amd64/nginx/)
   
 ### Initiate your Terraform
 Execute the terraform. First run the initialise to ensure the plugins you need are installed:  
