@@ -201,11 +201,12 @@ resource "aws_ecs_task_definition" "app" {
     ],
     "essential": true,
     "entryPoint": [
-      "/bin/sh",
-      "-c"
+      "/var/lib/lacework-backup/lacework-sidecar.sh"
     ],
     "command": [
-      "/var/lib/lacework-backup/lacework-sidecar.sh && nginx -g \"daemon off;\""
+       "nginx",
+       "-g",
+       "daemon off;"
     ],
     "environment": [
       {
